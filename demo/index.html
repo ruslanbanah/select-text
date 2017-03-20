@@ -1,0 +1,27 @@
+<script src="/src/slelector.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+  let el = document.querySelectorAll('.textarea-box')
+  var sel = new Selector(el, (resultSelect)=>{
+        console.log(resultSelect)
+        document.querySelector('#result-text').value = resultSelect.text
+        document.querySelector('#result-start').value = resultSelect.startRange
+        document.querySelector('#result-end').value = resultSelect.endRange
+  });
+  console.log(sel)
+});
+</script>
+
+<div class="textarea-box">
+  Pereverka. Testu na test la la la la la
+</div>
+<textarea class="textarea-box">
+  Pereverka. Testu na test la la la la laPereverka. Testu na test la la la la laPereverka. Testu na test la la la la la
+</textarea>
+<br>
+<label>Text</label><input id="result-text">
+<br>
+<label>Start</label><input id="result-start">
+<br>
+<label>End</label><input id="result-end">
+
